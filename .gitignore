@@ -143,3 +143,6 @@ vite.config.ts.timestamp-*
 .vite/
 .env
 .env*
+package-lock.json
+mongodb_data/*
+.gitignore
