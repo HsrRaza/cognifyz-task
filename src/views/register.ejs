@@ -1,4 +1,5 @@
-<%- include('layouts/main', { body: `
+<%- include('partials/header') %>
+
 <div class="flex min-h-full flex-col justify-center px-6 py-12 lg:px-8 bg-slate-950">
   <div class="sm:mx-auto sm:w-full sm:max-w-sm text-center">
     <i class="fa-solid fa-square-kanban text-indigo-500 text-5xl mb-4 animate-bounce"></i>
@@ -32,7 +33,7 @@
               <i class="fa-solid fa-user"></i>
             </span>
             <input id="username" name="username" type="text" required 
-                   class="block w-full rounded-lg border-0 bg-slate-900/60 py-2.5 pl-10 pr-3 text-white ring-1 ring-inset ring-slate-800 placeholder:text-slate-500 focus:ring-2 focus:ring-inset focus:ring-indigo-500 sm:text-sm sm:leading-6 transition"
+                   class="block w-full rounded-lg border-0 bg-slate-950 py-2.5 pl-10 pr-3 text-white ring-1 ring-inset ring-slate-800 placeholder:text-slate-555 focus:ring-2 focus:ring-inset focus:ring-indigo-500 sm:text-sm sm:leading-6 transition"
                    placeholder="coder123">
           </div>
           <p id="username-validation-err" class="text-xxs text-red-400 mt-1 hidden"></p>
@@ -46,7 +47,7 @@
               <i class="fa-solid fa-envelope"></i>
             </span>
             <input id="email" name="email" type="email" required 
-                   class="block w-full rounded-lg border-0 bg-slate-900/60 py-2.5 pl-10 pr-3 text-white ring-1 ring-inset ring-slate-800 placeholder:text-slate-500 focus:ring-2 focus:ring-inset focus:ring-indigo-500 sm:text-sm sm:leading-6 transition"
+                   class="block w-full rounded-lg border-0 bg-slate-950 py-2.5 pl-10 pr-3 text-white ring-1 ring-inset ring-slate-800 placeholder:text-slate-555 focus:ring-2 focus:ring-inset focus:ring-indigo-500 sm:text-sm sm:leading-6 transition"
                    placeholder="you@example.com">
           </div>
           <p id="email-validation-err" class="text-xxs text-red-400 mt-1 hidden"></p>
@@ -61,7 +62,7 @@
             </span>
             <input id="password" name="password" type="password" required 
                    oninput="checkPasswordStrength(this.value)"
-                   class="block w-full rounded-lg border-0 bg-slate-900/60 py-2.5 pl-10 pr-3 text-white ring-1 ring-inset ring-slate-800 placeholder:text-slate-500 focus:ring-2 focus:ring-inset focus:ring-indigo-500 sm:text-sm sm:leading-6 transition"
+                   class="block w-full rounded-lg border-0 bg-slate-950 py-2.5 pl-10 pr-3 text-white ring-1 ring-inset ring-slate-800 placeholder:text-slate-555 focus:ring-2 focus:ring-inset focus:ring-indigo-500 sm:text-sm sm:leading-6 transition"
                    placeholder="••••••••">
           </div>
           <p id="password-validation-err" class="text-xxs text-red-400 mt-1 hidden"></p>
@@ -81,7 +82,7 @@
         <!-- Terms and conditions -->
         <div class="flex items-center">
           <input id="terms" name="terms" type="checkbox" required
-                 class="h-4 w-4 rounded border-slate-800 bg-slate-900 text-indigo-600 focus:ring-indigo-600 focus:ring-offset-slate-950">
+                 class="h-4 w-4 rounded border-slate-800 bg-slate-950 text-indigo-600 focus:ring-indigo-600 focus:ring-offset-slate-950">
           <label for="terms" class="ml-2 block text-xs text-slate-400">
             I agree to the <a href="#" class="text-indigo-400 hover:text-indigo-300">Terms of Service</a> and <a href="#" class="text-indigo-400 hover:text-indigo-300">Privacy Policy</a>.
           </label>
@@ -104,4 +105,5 @@
 </div>
 
 <script src="/js/auth.js"></script>
-` }) %>
+
+<%- include('partials/footer') %>
