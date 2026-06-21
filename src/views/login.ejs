@@ -1,0 +1,72 @@
+<%- include('layouts/main', { body: `
+<div class="flex min-h-full flex-col justify-center px-6 py-12 lg:px-8 bg-slate-950">
+  <div class="sm:mx-auto id-logo sm:w-full sm:max-w-sm text-center">
+    <i class="fa-solid fa-square-kanban text-indigo-500 text-5xl mb-4 animate-bounce"></i>
+    <h2 class="text-3xl font-extrabold tracking-tight text-white">Sign in to your account</h2>
+    <p class="mt-2 text-sm text-slate-400">
+      Manage your team, collaborate and boost productivity.
+    </p>
+  </div>
+
+  <div class="mt-10 sm:mx-auto sm:w-full sm:max-w-sm">
+    <div class="glass p-8 rounded-2xl glow-brand animate-fade-in">
+      <!-- Error Message Banner -->
+      <div id="error-banner" class="hidden rounded-md bg-red-900/50 p-4 border border-red-500/30 mb-6">
+        <div class="flex">
+          <div class="flex-shrink-0">
+            <i class="fa-solid fa-circle-xmark text-red-400 mt-0.5"></i>
+          </div>
+          <div class="ml-3">
+            <h3 class="text-sm font-semibold text-red-200">Sign in failed</h3>
+            <p id="error-message" class="text-xs text-red-300 mt-1"></p>
+          </div>
+        </div>
+      </div>
+
+      <form class="space-y-6" id="login-form" onsubmit="handleLoginSubmit(event)">
+        <!-- Email Input -->
+        <div>
+          <label for="email" class="block text-sm font-medium leading-6 text-slate-300">Email address</label>
+          <div class="mt-2 relative">
+            <span class="absolute inset-y-0 left-0 pl-3 flex items-center text-slate-500">
+              <i class="fa-solid fa-envelope"></i>
+            </span>
+            <input id="email" name="email" type="email" autocomplete="email" required 
+                   class="block w-full rounded-lg border-0 bg-slate-900/60 py-2.5 pl-10 pr-3 text-white ring-1 ring-inset ring-slate-800 placeholder:text-slate-500 focus:ring-2 focus:ring-inset focus:ring-indigo-500 sm:text-sm sm:leading-6 transition"
+                   placeholder="you@example.com">
+          </div>
+        </div>
+
+        <!-- Password Input -->
+        <div>
+          <div class="flex items-center justify-between">
+            <label for="password" class="block text-sm font-medium leading-6 text-slate-300">Password</label>
+          </div>
+          <div class="mt-2 relative">
+            <span class="absolute inset-y-0 left-0 pl-3 flex items-center text-slate-500">
+              <i class="fa-solid fa-lock"></i>
+            </span>
+            <input id="password" name="password" type="password" autocomplete="current-password" required 
+                   class="block w-full rounded-lg border-0 bg-slate-900/60 py-2.5 pl-10 pr-3 text-white ring-1 ring-inset ring-slate-800 placeholder:text-slate-500 focus:ring-2 focus:ring-inset focus:ring-indigo-500 sm:text-sm sm:leading-6 transition"
+                   placeholder="••••••••">
+          </div>
+        </div>
+
+        <div>
+          <button type="submit" id="submit-btn"
+                  class="flex w-full justify-center rounded-lg bg-indigo-600 px-3 py-2.5 text-sm font-semibold leading-6 text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600 transition">
+            Sign In
+          </button>
+        </div>
+      </form>
+
+      <p class="mt-10 text-center text-sm text-slate-400">
+        Not a member?
+        <a href="/auth/register" class="font-semibold leading-6 text-indigo-400 hover:text-indigo-300 transition">Create an account</a>
+      </p>
+    </div>
+  </div>
+</div>
+
+<script src="/js/auth.js"></script>
+` }) %>
